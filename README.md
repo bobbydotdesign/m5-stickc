@@ -99,7 +99,12 @@ pio device monitor   # serial monitor (115200 baud)
 ```
 m5-stickc/
 ├── src/
-│   └── main.cpp         # all game code lives here
+│   ├── main.cpp          # setup, loop, state machine router
+│   ├── common.h          # shared types, arrow/hint helpers
+│   ├── menu.h / menu.cpp       # menu navigation
+│   ├── reaction.h / reaction.cpp # reaction timer game
+│   ├── magic8.h / magic8.cpp   # magic 8-ball game
+│   └── maze.h / maze.cpp       # tilt maze (levels, physics, rendering)
 ├── platformio.ini        # build configuration
 └── README.md
 ```
