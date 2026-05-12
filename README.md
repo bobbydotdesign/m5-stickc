@@ -27,7 +27,16 @@ Ask a question, then shake the device. The screen shows a classic 8-ball graphic
 
 ### Tilt Maze
 
-Navigate a yellow ball through an S-shaped maze by physically tilting the device. The ball moves with simulated physics — it accelerates with tilt and decelerates with friction, so it feels like rolling a real ball. Walls block your path and the ball slides along them naturally. Reach the green goal square to win and hear a victory melody. The maze uses the IMU (accelerometer) for tilt input and per-axis collision detection for smooth wall interactions.
+Navigate a yellow ball through 6 increasingly challenging mazes by physically tilting the device — like mini golf meets a marble labyrinth. The ball moves with simulated physics (acceleration, friction, momentum) so it feels like rolling a real ball.
+
+**Features:**
+- **6 unique levels** — from simple S-curves to vertical corridors, moving walls, and rotating arc obstacles
+- **3 hearts** — hitting walls costs a heart (with brief invincibility to prevent rapid drain). Lose all hearts and retry the current level
+- **Moving obstacles** — Level 4 has horizontal walls sliding back and forth, Level 5 has vertical columns moving up and down
+- **Rotating arcs** — Level 6 features two concentric circles rotating in opposite directions — time your entry through the gaps
+- **3-2-1 countdown** before each level so you can orient the device
+- **Mini golf flag** goal marker on every level
+- **Trophy + fireworks** celebration with looping particle effects when you beat all 6 levels
 
 ## Hardware
 
@@ -79,9 +88,9 @@ Contributions, ideas, and feedback are welcome! Whether it's a new game, a bug f
 
 Some ideas for additions:
 - More games (Simon Says, Snake, Pong)
+- More tilt maze levels
 - High score tracking with persistent storage
-- Sound effects and music
-- Difficulty levels
+- Moving obstacles on more maze levels
 
 ## License
 
