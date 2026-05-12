@@ -57,16 +57,42 @@ You can pick one up from the [M5Stack Official Store](https://shop.m5stack.com/)
 
 ### Prerequisites
 
-1. Install [PlatformIO](https://platformio.org/) (CLI or IDE plugin)
+1. **Python 3** — required by PlatformIO
+2. **PlatformIO** — install the CLI with:
+   ```bash
+   pip install platformio
+   ```
+   Or install the [PlatformIO IDE extension](https://platformio.org/install/ide) for VS Code.
+3. **USB driver** — your OS may need a driver for the CP2104 USB-to-serial chip. macOS and most Linux distros include it. On Windows, download from [Silicon Labs](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers).
+
+### Flash the device
+
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/bobbydotdesign/m5-stickc.git
+   cd m5-stickc
+   ```
+
 2. Connect your M5StickC Plus 2 via USB-C
 
-### Commands
+3. Build and flash:
+   ```bash
+   pio run -t upload
+   ```
+   PlatformIO will automatically download the ESP32 toolchain, Arduino framework, and all library dependencies on the first run. The device will reboot with the games once flashing completes.
+
+### Other commands
 
 ```bash
-pio run              # build
-pio run -t upload    # build + flash to device
+pio run              # build only (no flash)
 pio device monitor   # serial monitor (115200 baud)
 ```
+
+### Troubleshooting
+
+- **Device not detected**: try a different USB-C cable (some are charge-only). Check that the port appears with `ls /dev/cu.usb*` (macOS) or `ls /dev/ttyUSB*` (Linux).
+- **Permission denied on serial port**: on Linux, add your user to the `dialout` group: `sudo usermod -aG dialout $USER` then log out and back in.
+- **Build fails with `DFRobot_GP8XXX` error**: this is already handled in `platformio.ini` with `lib_ignore`. If you see it, make sure you're building from the repo root.
 
 ### Project Structure
 
