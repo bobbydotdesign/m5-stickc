@@ -44,7 +44,7 @@ void updateMenu() {
     }
     if (M5.BtnB.wasPressed()) {
         switch (menuSelection) {
-            case 0: switchState(STATE_REACTION);  break;
+            case 0: switchState(STATE_QUICKDRAW);  break;
             case 1: switchState(STATE_MAGIC8BALL); break;
             case 2: switchState(STATE_TILTMAZE);  break;
         }

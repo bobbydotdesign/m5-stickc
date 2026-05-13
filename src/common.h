@@ -4,7 +4,7 @@
 // --- State machine ---
 enum AppState {
     STATE_MENU,
-    STATE_REACTION,
+    STATE_QUICKDRAW,
     STATE_MAGIC8BALL,
     STATE_TILTMAZE
 };

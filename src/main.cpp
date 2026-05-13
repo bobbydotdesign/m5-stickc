@@ -1,6 +1,6 @@
 #include "common.h"
 #include "menu.h"
-#include "reaction.h"
+#include "quickdraw.h"
 #include "magic8.h"
 #include "maze.h"
 
@@ -9,10 +9,10 @@ AppState currentState = STATE_MENU;
 void switchState(AppState newState) {
     currentState = newState;
     switch (newState) {
-        case STATE_MENU:      enterMenu();     break;
-        case STATE_REACTION:  enterReaction();  break;
-        case STATE_MAGIC8BALL: enterMagic8();   break;
-        case STATE_TILTMAZE:  enterMaze();      break;
+        case STATE_MENU:      enterMenu();      break;
+        case STATE_QUICKDRAW: enterQuickDraw();  break;
+        case STATE_MAGIC8BALL: enterMagic8();    break;
+        case STATE_TILTMAZE:  enterMaze();       break;
     }
 }
 
@@ -32,10 +32,10 @@ void loop() {
     M5.update();
 
     switch (currentState) {
-        case STATE_MENU:       updateMenu();     break;
-        case STATE_REACTION:   updateReaction(); break;
-        case STATE_MAGIC8BALL: updateMagic8();   break;
-        case STATE_TILTMAZE:   updateMaze();     break;
+        case STATE_MENU:       updateMenu();      break;
+        case STATE_QUICKDRAW:  updateQuickDraw(); break;
+        case STATE_MAGIC8BALL: updateMagic8();     break;
+        case STATE_TILTMAZE:   updateMaze();       break;
     }
 
     delay(10);
