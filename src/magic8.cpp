@@ -83,9 +83,9 @@ void updateMagic8() {
                 const char* answer = magic8Answers[idx];
                 int len = strlen(answer);
                 M5.Display.setTextSize(2);
-                int charsPerLine = 8;
+                int charsPerLine = 11;
                 int lines = (len + charsPerLine - 1) / charsPerLine;
-                int startY = 75 - (lines * 10);
+                int startY = 80 - (lines * 10);
                 int pos = 0;
                 for (int line = 0; line < lines && pos < len; line++) {
                     int end = pos + charsPerLine;

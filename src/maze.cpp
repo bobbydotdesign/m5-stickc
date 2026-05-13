@@ -415,9 +415,23 @@ static void showLevelClear() {
     M5.Speaker.tone(784, 200);
 }
 
+// Trophy bounding box (used to protect trophy from firework erase)
+static const int TROPHY_X1 = 32, TROPHY_Y1 = 49, TROPHY_X2 = 103, TROPHY_Y2 = 112;
+
+static bool insideTrophy(int x, int y) {
+    return x >= TROPHY_X1 && x <= TROPHY_X2 && y >= TROPHY_Y1 && y <= TROPHY_Y2;
+}
+
 static void spawnFirework() {
-    float cx = random(20, 115);
-    float cy = random(30, 140);
+    float cx, cy;
+    // Spawn fireworks outside the trophy area
+    if (random(0, 2) == 0) {
+        cx = random(10, 125);
+        cy = random(140, 200);
+    } else {
+        cx = random(0, 2) == 0 ? random(5, TROPHY_X1) : random(TROPHY_X2, 130);
+        cy = random(30, 120);
+    }
     uint16_t colors[] = {RED, YELLOW, GREEN, CYAN, 0xF81F, WHITE};
     uint16_t color = colors[random(0, 6)];
     int count = random(8, 15);
@@ -638,7 +652,11 @@ void updateMaze() {
                 M5.Speaker.tone(random(800, 1500), 50);
             }
             for (int i = 0; i < sparkCount; i++) {
-                M5.Display.drawPixel((int)sparks[i].x, (int)sparks[i].y, BLACK);
+                int oldX = (int)sparks[i].x;
+                int oldY = (int)sparks[i].y;
+                if (!insideTrophy(oldX, oldY)) {
+                    M5.Display.drawPixel(oldX, oldY, BLACK);
+                }
                 sparks[i].x += sparks[i].vx;
                 sparks[i].y += sparks[i].vy;
                 sparks[i].vy += 0.05f;
@@ -648,7 +666,11 @@ void updateMaze() {
                     sparkCount--;
                     i--;
                 } else {
-                    M5.Display.drawPixel((int)sparks[i].x, (int)sparks[i].y, sparks[i].color);
+                    int newX = (int)sparks[i].x;
+                    int newY = (int)sparks[i].y;
+                    if (!insideTrophy(newX, newY)) {
+                        M5.Display.drawPixel(newX, newY, sparks[i].color);
+                    }
                 }
             }
             break;

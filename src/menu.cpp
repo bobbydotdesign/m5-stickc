@@ -1,6 +1,6 @@
 #include "menu.h"
 
-static const char* menuItems[] = { "Reaction", "8-Ball", "Tilt Maze" };
+static const char* menuItems[] = { "Quick Draw", "8-Ball", "Mini Golf" };
 static const int menuCount = 3;
 static int menuSelection = 0;
 

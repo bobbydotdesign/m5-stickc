@@ -10,7 +10,7 @@ I'm by no means a professional embedded developer — this is a learning project
 
 ## Games
 
-### Reaction Timer
+### Quick Draw
 
 Test your reflexes! The screen fills red with "Wait...", then after a random 2–5 second delay it flashes green with "GO!". Press BtnA as fast as you can. Your reaction time is shown in milliseconds along with a rating:
 
@@ -25,7 +25,7 @@ Press too early during the red screen and it catches you. Great for competing wi
 
 Ask a question, then shake the device. The screen shows a classic 8-ball graphic with "Shake me!" — give it a shake and after a "Thinking..." animation with animated dots, one of 20 possible answers appears inside the ball. Shake again for a new answer. Uses the built-in accelerometer to detect shakes (triggers above 2G of force).
 
-### Tilt Maze
+### Mini Golf
 
 Navigate a yellow ball through 6 increasingly challenging mazes by physically tilting the device — like mini golf meets a marble labyrinth. The ball moves with simulated physics (acceleration, friction, momentum) so it feels like rolling a real ball.
 
@@ -50,7 +50,7 @@ You can pick one up from the [M5Stack Official Store](https://shop.m5stack.com/)
 |-------|------|---------|
 | **BtnA** (front) | Scroll through games | Game action (press / play again) |
 | **BtnB** (side) | Select game | Back to menu |
-| **Tilt** | — | Move ball (Tilt Maze) |
+| **Tilt** | — | Move ball (Mini Golf) |
 | **Shake** | — | Get answer (Magic 8-Ball) |
 
 ## Build & Flash
@@ -104,7 +104,7 @@ m5-stickc/
 │   ├── menu.h / menu.cpp       # menu navigation
 │   ├── reaction.h / reaction.cpp # reaction timer game
 │   ├── magic8.h / magic8.cpp   # magic 8-ball game
-│   └── maze.h / maze.cpp       # tilt maze (levels, physics, rendering)
+│   └── maze.h / maze.cpp       # mini golf (levels, physics, rendering)
 ├── platformio.ini        # build configuration
 └── README.md
 ```
@@ -119,7 +119,7 @@ Contributions, ideas, and feedback are welcome! Whether it's a new game, a bug f
 
 Some ideas for additions:
 - More games (Simon Says, Snake, Pong)
-- More tilt maze levels
+- More mini golf levels
 - High score tracking with persistent storage
 - Moving obstacles on more maze levels
 
