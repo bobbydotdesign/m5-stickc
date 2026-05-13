@@ -2,6 +2,9 @@
 
 M5StickC Plus 2 project using PlatformIO + M5Unified on ESP32.
 
+## Git Rules
+- Do NOT add `Co-Authored-By` lines to commits
+
 ## Critical Rules
 
 ### Use M5Unified directly — NOT the StickCP2 wrapper
