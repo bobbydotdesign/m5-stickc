@@ -123,6 +123,18 @@ Some ideas for additions:
 - High score tracking with persistent storage
 - Moving obstacles on more maze levels
 
+## Built with Claude Code
+
+This project was built with [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Anthropic's CLI tool for agentic coding with Claude. Claude Code helped with game logic, level design, UI iteration, and the modular refactor — acting as a pair programmer throughout development.
+
+If you're interested in using Claude Code for your own embedded or hardware projects:
+
+- [Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code)
+- [Getting started guide](https://docs.anthropic.com/en/docs/claude-code/getting-started)
+- [GitHub](https://github.com/anthropics/claude-code)
+
+It works well for PlatformIO/Arduino projects — you can build, flash, and iterate on device behavior directly from the conversation.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and share.
