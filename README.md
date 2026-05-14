@@ -12,14 +12,11 @@ I'm by no means a professional embedded developer — this is a learning project
 
 ### Quick Draw
 
-Test your reflexes! The screen fills red with "Wait...", then after a random 2–5 second delay it flashes green with "GO!". Press BtnA as fast as you can. Your reaction time is shown in milliseconds along with a rating:
+Face off against 6 Western sharpshooters in a quick draw duel! Each opponent has a unique pixel-art character and gets progressively faster — from Dusty Dan (800ms) all the way to The Undertaker (200ms, near human reaction time limit).
 
-- **Lightning!** — under 200 ms
-- **Fast!** — under 350 ms
-- **Good!** — under 500 ms
-- **Try again!** — 500 ms and up
+**How it works:** A "STEADY..." screen builds tension, then "DRAW!" flashes — press BtnA before your opponent shoots. Beat them and watch a death animation: their eyes turn to X's, they fade into a ghost that floats away, and a gravestone rises from the ground. Lose and you get a tombstone with "BANG!" Too early? That's a false start.
 
-Press too early during the red screen and it catches you. Great for competing with friends and family to see who has the fastest reflexes.
+Beat all 6 to become the Sheriff and save the town.
 
 ### Magic 8-Ball
 
@@ -69,8 +66,8 @@ You can pick one up from the [M5Stack Official Store](https://shop.m5stack.com/)
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/bobbydotdesign/m5-stickc.git
-   cd m5-stickc
+   git clone https://github.com/bobbydotdesign/m5-stickc-plus2-arcade.git
+   cd m5-stickc-plus2-arcade
    ```
 
 2. Connect your M5StickC Plus 2 via USB-C
@@ -97,12 +94,12 @@ pio device monitor   # serial monitor (115200 baud)
 ### Project Structure
 
 ```
-m5-stickc/
+m5-stickc-plus2-arcade/
 ├── src/
 │   ├── main.cpp          # setup, loop, state machine router
 │   ├── common.h          # shared types, arrow/hint helpers
 │   ├── menu.h / menu.cpp       # menu navigation
-│   ├── reaction.h / reaction.cpp # reaction timer game
+│   ├── quickdraw.h / quickdraw.cpp # quick draw duel game
 │   ├── magic8.h / magic8.cpp   # magic 8-ball game
 │   └── maze.h / maze.cpp       # mini golf (levels, physics, rendering)
 ├── platformio.ini        # build configuration
