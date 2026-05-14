@@ -1,4 +1,4 @@
-# M5 StickC Plus2 Mini Games
+# M5StickC Plus2 Arcade
 
 A collection of mini games for the [M5StickC Plus 2](https://shop.m5stack.com/products/m5stickc-plus2-esp32-mini-iot-development-kit), built with [PlatformIO](https://platformio.org/) and [M5Unified](https://github.com/m5stack/M5Unified).
 
